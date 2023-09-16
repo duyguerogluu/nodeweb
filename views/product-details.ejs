@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body >
+    <%- include('partials/nav') %>
+    <h1>Urun detay</h1>
+    <div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="/images/<%= urun.imgUrl %>" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= urun.name %>
+                            </h5>
+                            <p class="card-text">
+                                <%= urun.price %>
+                            </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque suscipit ex, ea asperiores nam magni molestiae deleniti voluptatem sapiente sint, voluptas necessitatibus dolor, quis perspiciatis minus corporis modi voluptates! Vero?</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita debitis repellendus, tempora, id aliquid nisi illum incidunt laborum odit nam rem temporibus excepturi perferendis iure laudantium quasi ducimus veritatis et.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <p>
+        <% if (urun.isActive) { %>
+            <span>Ürün Satışta</span>
+            <% } else { %>
+                <span>Ürün Satışta Değil</span>
+                <% } %>
+    </p>
+</body>
+
+</html>

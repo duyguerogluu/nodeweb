@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/nav') %>
+    <h1>Ana Sayfa</h1>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+
+                <% urunler.forEach(urun=> { %>
+                    <% if (urun.isHome) { %>
+                        <%- include('partials/product', urun) %>
+                            <% } %>
+
+                                <% }) %>
+
+            </div>
+        </div>
+    </div>
+
+
+    <ul>
+        <% urunler.forEach(urun=> { %>
+            <li>
+                <%= urun.name %> - <%= urun.price %>
+            </li>
+            <% }) %>
+    </ul>
+
+    <ul>
+        <% urunler.forEach(urun=> { %>
+            <% if (urun.price>130000) { %>
+                <li>
+                    <%= urun.name %> - <%= urun.price %>
+                </li>
+                <% } %>
+                    <% }) %>
+    </ul>
+
+    <ul>
+        <% urunler.forEach(urun=> { %>
+            <% if (urun.price>130000 && urun.isActive) { %>
+                <li>
+                    <%= urun.name %> - <%= urun.price %>
+                </li>
+                <% } %>
+                    <% }) %>
+    </ul>
+
+    <ul>
+        <% urunler.forEach(urun=> { %>
+            <a href="/product/<%= urun.id %>">
+                <li>
+                    <%= urun.name %> - <%= urun.price %>
+                </li>
+            </a>
+            <% }) %>
+    </ul>
+
+
+</body>
+
+</html>
